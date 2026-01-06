@@ -25,14 +25,15 @@ class SistemaProduto:
 
             elif opcao == "2":
                 produtos = self.crud_produto.listar()
+                print("\n--- Produtos ---")
                 for produto in produtos:
-                    print(produto)
+                    print(f"ID: {produto[0]}, Nome: {produto[1]}, Preço: {produto[2]}, ID Categoria: {produto[3]}")
 
             elif opcao == "3":
                 id_produto = int(input("ID do Produto a buscar: "))
                 produto = self.crud_produto.buscar(id_produto)
                 if produto:
-                    print(produto)
+                    print(f"ID: {produto[0]}, Nome: {produto[1]}, Preço: {produto[2]}, ID Categoria: {produto[3]}")
                 else:
                     print("Produto não encontrado.")
 
